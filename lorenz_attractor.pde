@@ -1,6 +1,6 @@
 /*------------------------------------------------------
  * Aryaman Majumdar
- * 2020
+ * 2021
  * Lorenz attractor
  ----------------------------------------------------*/
 
@@ -21,7 +21,10 @@ ArrayList<PVector> points = new ArrayList<PVector>();
 //want wacky colors.
 void setup(){
   size(800,600, P3D);
+  
   colorMode(HSB);
+  
+  frameRate(170);
 
 }
 
@@ -58,6 +61,8 @@ void draw(){
     stroke(hue,200,255);
     vertex(v.x,v.y,v.z);
     hue += 0.1;
+    rotateY((1.0/360)*2.0*PI);
+    rotateX((1.0/360)*2.0*PI);
     if(hue > 255){
       hue = 0;
     }
